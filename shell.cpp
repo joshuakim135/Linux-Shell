@@ -15,9 +15,24 @@ vector<string> split(string &str, string delim=" ") {
     vector<string> out;
     size_t i = 0;
     
-    if ((start = str.find_first_not_of("\"") != string::npos) 
-        || ((start = str.find_first_not_of("\'")) != string::npos )) {
-        
+    int start_not_allowed = -1;
+    int end_not_allowed = -1;
+
+    if (((start = str.find("\"")) != string::npos) || ((start = str.find("\'")) != string::npos)) {
+        start_not_allowed = start;
+    }
+    if (start_not_allowed != -1) {
+        for (int i = start_not_allowed; i < str.length(); i++) {
+            if ((str[i] == '\"') || str[i] == '\'')  {
+                end_not_allowed = i;
+            }
+        }
+    }
+    
+    if ((start = str.find("|")) != string::npos) {
+        if (!(start >= start_not_allowed && start <= end_not_allowed)) {
+            delim = "|";
+        }
     }
 
     while ((start = str.find_first_not_of(delim, end)) != string::npos) {
@@ -30,6 +45,7 @@ vector<string> split(string &str, string delim=" ") {
         }
         i++;
     }
+
     return out;
 }
 
@@ -96,6 +112,15 @@ int main() {
         if (inputline[inputline.size()-1] == '&') {
             bg = true;
             inputline = inputline.substr (0, inputline.size()-1);
+        }
+
+        // cd check
+        if (inputline.length() > 2) {
+            if ((inputline[0] == 'c') && (inputline[1] == 'd')) {
+                // if cd command, execute it here
+                cout << "cd called" << endl;
+                continue;
+            } 
         }
 
         // if inputline has "" or ''
