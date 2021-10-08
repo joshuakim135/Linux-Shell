@@ -85,10 +85,14 @@ int main() {
     int out_def = dup(1);
     
     vector<int> bgs;
+    string previousCmd;
 
     while (true) {
+        // reset file descriptor
         dup2(in_def, 0);
         dup2(out_def, 1);
+
+        // clean up background process
         for (int i = 0; i < bgs.size(); i++) {
            if (waitpid(bgs[i], 0, WNOHANG) == bgs[i]) {
                cout << "Process: " << bgs[i] << " ended" << endl;
@@ -100,6 +104,8 @@ int main() {
         cout << "My Shell$ ";
         string inputline;
         getline(cin, inputline);
+
+        // check if exit
         if (inputline == string("exit")) {
             cout << "Bye!1 End of shell" << endl;
             break;
@@ -114,19 +120,53 @@ int main() {
             inputline = inputline.substr (0, inputline.size()-1);
         }
 
-        // cd check
+        // check if it's a 'cd' command
         if (inputline.length() > 2) {
             if ((inputline[0] == 'c') && (inputline[1] == 'd')) {
                 // if cd command, execute it here
-                cout << "cd called" << endl;
+                // check if 'cd -' command
+                if (inputline.length() > 3) {
+                    if (inputline[3] == '-') {
+                        // get current working directory
+                        char buffer[260];
+                        char *path = getcwd(buffer, 260);
+                        string paththing = path;
+                        if (path) {
+                            // get current dir
+                            string CurrentPath;
+                            CurrentPath = path;
+                            // change current dir to prev dir
+                            chdir(previousCmd.c_str());
+
+                            // change previous dir to old current
+                            previousCmd = CurrentPath;
+                            continue;
+                        }
+                    }
+                }
+                string dir_str = "";
+                for (int i = 2; i < inputline.size(); i++) {
+                    dir_str += inputline[i];
+                }
+                dir_str = dir_str.substr(1, dir_str.length()-1);
+
+                char buffer2[260];
+                char *path2 = getcwd(buffer2, 260);
+                string CurrentPath2;
+                CurrentPath2 = path2;
+                int rx = chdir(dir_str.c_str());
+                if (chdir < 0) {
+                    cout << "chdir() failed" << endl;
+                } else {
+                    previousCmd = CurrentPath2;
+                }
                 continue;
             } 
         }
 
-        // if inputline has "" or ''
+        // fork + exec starts here
         int fd[2];
-        int pid = fork();
-        
+        int pid = fork();    
         if (pid == 0) { // if child
             vector<string> parts = split(inputline);
             char** args = vec_to_char_array (parts);
