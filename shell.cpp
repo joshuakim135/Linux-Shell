@@ -34,6 +34,7 @@ vector<string> split(string &str, string delim=" ") {
             delim = "|";
         }
     }
+    cout << "delim: " << delim << endl;
 
     while ((start = str.find_first_not_of(delim, end)) != string::npos) {
         if (delim == "|" && i > 0) {
@@ -101,7 +102,9 @@ int main() {
            }
         }
 
-        cout << "My Shell$ ";
+        // shell prompt
+        string userName = getlogin();
+        cout << userName << "$ ";
         string inputline;
         getline(cin, inputline);
 
