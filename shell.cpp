@@ -29,15 +29,34 @@ vector<string> split(string &str, string delim=" ") {
         }
     }
     
+    //if '|' is detected, delim = |
+    /*
     if ((start = str.find("|")) != string::npos) {
         if (!(start >= start_not_allowed && start <= end_not_allowed)) {
             delim = "|";
         }
-    }
-    cout << "delim: " << delim << endl;
-
+    }*/
+    
     while ((start = str.find_first_not_of(delim, end)) != string::npos) {
-        if (delim == "|" && i > 0) {
+        if ((start_not_allowed <= start) && (start <= end_not_allowed)) { // if between quotes
+            if ((start_not_allowed != -1) && (end_not_allowed != -1)) {
+                // add quoted block to vector
+                if (end_not_allowed - start_not_allowed > 1) {
+                    start_not_allowed += 1;
+                    out.push_back(str.substr(start_not_allowed, end_not_allowed - start_not_allowed));
+                } else {
+                    out.push_back("");
+                }
+
+                // set end = end_not_allowed
+                end = str.find(delim, end_not_allowed + 1);
+                if (end == string::npos) {
+                    out.push_back(str.substr(end_not_allowed + 1, str.size()-1));
+                }
+            } else {
+                cout << "Invalid syntax" << endl;
+            }
+        } else if (delim == "|" && i > 0) {
             end = str.find(delim, start);
             out.push_back(str.substr(start + 1, end - start));
         } else {
@@ -81,7 +100,6 @@ string trim (string input) {
 }
 
 int main() {
-    
     int in_def = dup(0);
     int out_def = dup(1);
     
@@ -122,7 +140,7 @@ int main() {
             bg = true;
             inputline = inputline.substr (0, inputline.size()-1);
         }
-
+        
         // check if it's a 'cd' command
         if (inputline.length() > 2) {
             if ((inputline[0] == 'c') && (inputline[1] == 'd')) {
@@ -167,12 +185,31 @@ int main() {
             } 
         }
 
+        // check for '<' and '>'
+        bool in = false, out = false;
+        if (inputline.find("<") != string::npos) {
+            in = true;
+        }
+        if (inputline.find(">") != string::npos) {
+            out = true;
+        }
+
+        // split by '|'
+        vector<string> c = split(inputline, "|");
+
         // fork + exec starts here
         int fd[2];
-        int pid = fork();    
-        if (pid == 0) { // if child
+        int pid = fork();
+        if (pid == -1) {
+            perror("fork");
+        } else if (pid == 0) { // if child
             vector<string> parts = split(inputline);
-            char** args = vec_to_char_array (parts);
+            for (string word : parts) {
+                cout << word << endl;
+            }
+
+
+            char** args = vec_to_char_array(parts);
             execvp (args[0], args);
         } else { // if parent
             if (!bg) {
