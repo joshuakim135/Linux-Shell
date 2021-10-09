@@ -1,249 +1,224 @@
-USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root           1  0.0  0.1 166084 12736 ?        Ss   07:12   0:11 /sbin/init splash
-root           2  0.0  0.0      0     0 ?        S    07:12   0:00 [kthreadd]
-root           3  0.0  0.0      0     0 ?        I<   07:12   0:00 [rcu_gp]
-root           4  0.0  0.0      0     0 ?        I<   07:12   0:00 [rcu_par_gp]
-root           6  0.0  0.0      0     0 ?        I<   07:12   0:00 [kworker/0:0H-events_highpri]
-root           9  0.0  0.0      0     0 ?        I<   07:12   0:00 [mm_percpu_wq]
-root          10  0.0  0.0      0     0 ?        S    07:12   0:00 [rcu_tasks_rude_]
-root          11  0.0  0.0      0     0 ?        S    07:12   0:00 [rcu_tasks_trace]
-root          12  0.0  0.0      0     0 ?        S    07:12   0:02 [ksoftirqd/0]
-root          13  0.0  0.0      0     0 ?        I    07:12   0:12 [rcu_sched]
-root          14  0.0  0.0      0     0 ?        S    07:12   0:00 [migration/0]
-root          15  0.0  0.0      0     0 ?        S    07:12   0:00 [idle_inject/0]
-root          16  0.0  0.0      0     0 ?        S    07:12   0:00 [cpuhp/0]
-root          17  0.0  0.0      0     0 ?        S    07:12   0:00 [kdevtmpfs]
-root          18  0.0  0.0      0     0 ?        I<   07:12   0:00 [netns]
-root          19  0.0  0.0      0     0 ?        I<   07:12   0:00 [inet_frag_wq]
-root          20  0.0  0.0      0     0 ?        S    07:12   0:00 [kauditd]
-root          21  0.0  0.0      0     0 ?        S    07:12   0:00 [khungtaskd]
-root          22  0.0  0.0      0     0 ?        S    07:12   0:00 [oom_reaper]
-root          23  0.0  0.0      0     0 ?        I<   07:12   0:00 [writeback]
-root          24  0.0  0.0      0     0 ?        S    07:12   0:05 [kcompactd0]
-root          25  0.0  0.0      0     0 ?        SN   07:12   0:00 [ksmd]
-root          26  0.0  0.0      0     0 ?        SN   07:12   0:00 [khugepaged]
-root          72  0.0  0.0      0     0 ?        I<   07:12   0:00 [kintegrityd]
-root          73  0.0  0.0      0     0 ?        I<   07:12   0:00 [kblockd]
-root          74  0.0  0.0      0     0 ?        I<   07:12   0:00 [blkcg_punt_bio]
-root          75  0.0  0.0      0     0 ?        I<   07:12   0:00 [tpm_dev_wq]
-root          76  0.0  0.0      0     0 ?        I<   07:12   0:00 [ata_sff]
-root          77  0.0  0.0      0     0 ?        I<   07:12   0:00 [md]
-root          78  0.0  0.0      0     0 ?        I<   07:12   0:00 [edac-poller]
-root          79  0.0  0.0      0     0 ?        I<   07:12   0:00 [devfreq_wq]
-root          80  0.0  0.0      0     0 ?        S    07:12   0:00 [watchdogd]
-root          82  0.0  0.0      0     0 ?        I<   07:12   0:04 [kworker/0:1H-kblockd]
-root          84  0.0  0.0      0     0 ?        S    07:12   0:00 [kswapd0]
-root          85  0.0  0.0      0     0 ?        S    07:12   0:00 [ecryptfs-kthrea]
-root          87  0.0  0.0      0     0 ?        I<   07:12   0:00 [kthrotld]
-root          88  0.0  0.0      0     0 ?        I<   07:12   0:00 [acpi_thermal_pm]
-root          89  0.0  0.0      0     0 ?        S    07:12   0:00 [scsi_eh_0]
-root          90  0.0  0.0      0     0 ?        I<   07:12   0:00 [scsi_tmf_0]
-root          91  0.0  0.0      0     0 ?        S    07:12   0:00 [scsi_eh_1]
-root          92  0.0  0.0      0     0 ?        I<   07:12   0:00 [scsi_tmf_1]
-root          94  0.0  0.0      0     0 ?        I<   07:12   0:00 [vfio-irqfd-clea]
-root          95  0.0  0.0      0     0 ?        I<   07:12   0:00 [ipv6_addrconf]
-root         105  0.0  0.0      0     0 ?        I<   07:12   0:00 [kstrp]
-root         108  0.0  0.0      0     0 ?        I<   07:12   0:00 [zswap-shrink]
-root         109  0.0  0.0      0     0 ?        I<   07:12   0:00 [kworker/u3:0]
-root         114  0.0  0.0      0     0 ?        I<   07:12   0:00 [charger_manager]
-root         159  0.0  0.0      0     0 ?        S    07:12   0:00 [scsi_eh_2]
-root         160  0.0  0.0      0     0 ?        I<   07:12   0:00 [scsi_tmf_2]
-root         189  0.0  0.0      0     0 ?        S    07:12   0:01 [jbd2/sda1-8]
-root         190  0.0  0.0      0     0 ?        I<   07:12   0:00 [ext4-rsv-conver]
-root         229  0.0  0.2  65224 20156 ?        S<s  07:12   0:02 /lib/systemd/systemd-journald
-root         254  0.0  0.0      0     0 ?        S    07:12   0:05 [irq/18-vmwgfx]
-root         255  0.0  0.0  23956  6396 ?        Ss   07:12   0:00 /lib/systemd/systemd-udevd
-root         256  0.0  0.0      0     0 ?        I<   07:12   0:00 [ttm_swap]
-root         257  0.0  0.0      0     0 ?        S    07:12   0:00 [card0-crtc0]
-root         258  0.0  0.0      0     0 ?        S    07:12   0:00 [card0-crtc1]
-root         259  0.0  0.0      0     0 ?        S    07:12   0:00 [card0-crtc2]
-root         260  0.0  0.0      0     0 ?        S    07:12   0:00 [card0-crtc3]
-root         262  0.0  0.0      0     0 ?        S    07:12   0:00 [card0-crtc4]
-root         263  0.0  0.0      0     0 ?        S    07:12   0:00 [card0-crtc5]
-root         264  0.0  0.0      0     0 ?        S    07:12   0:00 [card0-crtc6]
-root         265  0.0  0.0      0     0 ?        S    07:12   0:00 [card0-crtc7]
-root         296  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop1]
-root         297  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop2]
-root         298  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop3]
-root         299  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop4]
-root         306  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop5]
-root         309  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop6]
-root         315  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop9]
-root         316  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop10]
-root         317  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop11]
-root         318  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop12]
-root         362  0.0  0.0      0     0 ?        I<   07:12   0:00 [cryptd]
-root         562  0.0  0.0      0     0 ?        S    07:12   0:01 [jbd2/sda4-8]
-root         563  0.0  0.0      0     0 ?        I<   07:12   0:00 [ext4-rsv-conver]
-systemd+     575  0.0  0.1  24236 13196 ?        Ss   07:12   0:07 /lib/systemd/systemd-resolved
-systemd+     577  0.0  0.0  88452  6252 ?        Ssl  07:12   0:00 /lib/systemd/systemd-timesyncd
-root         616  0.0  0.0 249168  7824 ?        Ssl  07:12   0:01 /usr/lib/accountsservice/accounts-daemon
-root         617  0.0  0.0   2556   948 ?        Ss   07:12   0:01 /usr/sbin/acpid
-avahi        619  0.0  0.0   7436  3512 ?        Ss   07:12   0:00 avahi-daemon: running [osboxes.local]
-root         622  0.0  0.0  18128  3000 ?        Ss   07:12   0:00 /usr/sbin/cron -f -P
-message+     625  0.0  0.0  11156  6996 ?        Ss   07:12   0:07 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
-root         626  0.0  0.2 346060 19620 ?        Ssl  07:12   0:18 /usr/sbin/NetworkManager --no-daemon
-root         639  0.0  0.2  48180 21532 ?        Ss   07:12   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
-root         640  0.0  0.1 252156 11200 ?        Ssl  07:12   0:02 /usr/libexec/polkitd --no-debug
-root         645  0.0  0.0 245860  6560 ?        Ssl  07:12   0:00 /usr/libexec/power-profiles-daemon
-syslog       651  0.0  0.0 221216  5144 ?        Ssl  07:12   0:00 /usr/sbin/rsyslogd -n -iNONE
-root         656  0.0  0.0 245676  6860 ?        Ssl  07:12   0:00 /usr/libexec/switcheroo-control
-root         660  0.0  0.0  22144  7752 ?        Ss   07:12   0:00 /lib/systemd/systemd-logind
-root         661  0.0  0.1 394440 12944 ?        Ssl  07:12   0:00 /usr/libexec/udisks2/udisksd
-root         662  0.0  0.0  14740  5240 ?        Ss   07:12   0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
-avahi        674  0.0  0.0   7252   348 ?        S    07:12   0:00 avahi-daemon: chroot helper
-root         700  0.0  0.1 316720 11644 ?        Ssl  07:12   0:00 /usr/sbin/ModemManager
-root         737  0.0  0.2 126284 23668 ?        Ssl  07:12   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
-root         738  0.0  0.1 250400  9064 ?        Ssl  07:12   0:00 /usr/sbin/gdm3
-whoopsie     778  0.0  0.1 328492 15788 ?        Ssl  07:12   0:00 /usr/bin/whoopsie -f
-kernoops     786  0.0  0.0  13528   464 ?        Ss   07:12   0:00 /usr/sbin/kerneloops --test
-kernoops     791  0.0  0.0  13528   464 ?        Ss   07:12   0:00 /usr/sbin/kerneloops
-rtkit        854  0.0  0.0 153848  2968 ?        SNsl 07:12   0:00 /usr/libexec/rtkit-daemon
-root         948  0.0  0.1 258468  8728 ?        Ssl  07:12   0:01 /usr/libexec/upowerd
-geoclue     1035  0.0  0.2 372060 19428 ?        Ssl  07:12   0:00 /usr/libexec/geoclue
-root        1036  0.0  0.6 455000 48936 ?        Ssl  07:12   0:21 /usr/libexec/packagekitd
-colord      1169  0.0  0.1 254352 13344 ?        Ssl  07:12   0:00 /usr/libexec/colord
-root        1308  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop13]
-root        1312  0.0  0.1 327476 11492 ?        Sl   07:12   0:00 gdm-session-worker [pam/gdm-password]
-root        1409  0.0  0.0      0     0 ?        S<   07:12   0:00 [loop14]
-osboxes     1412  0.0  0.1  16352  9976 ?        Ss   07:12   0:03 /lib/systemd/systemd --user
-osboxes     1414  0.0  0.0 103760  5016 ?        S    07:12   0:00 (sd-pam)
-root        1419  0.0  0.3 672836 32436 ?        Ssl  07:12   0:15 /usr/lib/snapd/snapd
-osboxes     1429  0.0  0.0  90680  5872 ?        S<sl 07:12   0:00 /usr/bin/pipewire
-osboxes     1430  0.0  0.0  82828  5740 ?        S<sl 07:12   0:00 /usr/bin/pipewire-media-session
-osboxes     1431  0.0  0.2 2007312 19272 ?       S<sl 07:12   0:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
-osboxes     1433  0.0  0.3 668900 25492 ?        SNsl 07:12   0:08 /usr/libexec/tracker-miner-fs
-osboxes     1436  0.0  0.0  10184  6452 ?        Ss   07:12   0:08 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
-osboxes     1452  0.0  0.0 249744  8140 ?        Ssl  07:12   0:00 /usr/libexec/gvfsd
-osboxes     1455  0.0  0.0 250192  7584 ?        Sl   07:12   0:01 /usr/bin/gnome-keyring-daemon --daemonize --login
-osboxes     1461  0.0  0.0 379672  5996 ?        Sl   07:12   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
-osboxes     1462  0.0  0.1 325240 10084 ?        Ssl  07:12   0:00 /usr/libexec/gvfs-udisks2-volume-monitor
-osboxes     1471  0.0  0.0 171608  6168 tty2     Ssl+ 07:12   0:00 /usr/libexec/gdm-wayland-session env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
-osboxes     1476  0.0  0.1 229916 15524 tty2     Sl+  07:12   0:00 /usr/libexec/gnome-session-binary --systemd --session=ubuntu
-osboxes     1501  0.0  0.0 245656  6576 ?        Ssl  07:12   0:00 /usr/libexec/gvfs-mtp-volume-monitor
-osboxes     1509  0.0  0.0 246708  7156 ?        Ssl  07:12   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
-osboxes     1513  0.0  0.0 246476  7616 ?        Ssl  07:12   0:00 /usr/libexec/gvfs-goa-volume-monitor
-osboxes     1518  0.0  0.9 777480 74964 ?        SLl  07:12   0:08 /usr/libexec/goa-daemon
-osboxes     1538  0.0  0.1 398472  9052 ?        Sl   07:12   0:00 /usr/libexec/goa-identity-service
-osboxes     1549  0.0  0.0 100968  4896 ?        Ssl  07:12   0:00 /usr/libexec/gnome-session-ctl --monitor
-osboxes     1550  0.0  0.0 323072  7800 ?        Ssl  07:12   0:03 /usr/libexec/gvfs-afc-volume-monitor
-osboxes     1565  0.0  0.2 525896 17780 ?        Ssl  07:12   0:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
-osboxes     1598  5.9  6.0 4166748 494948 ?      Ssl  07:12  30:36 /usr/bin/gnome-shell
-osboxes     1603  0.0  0.0 306780  6708 ?        Sl   07:12   0:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
-osboxes     1609  0.0  0.0   8384  4632 ?        S    07:12   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
-osboxes     1651  0.3  1.0 494472 85496 ?        Sl   07:12   2:01 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.SNRIA1 -listen 4 -listen 5 -displayfd 6 -initfd 7
-osboxes     1703  0.0  0.0 245564  6268 ?        Ssl  07:12   0:00 /usr/libexec/xdg-permission-store
-osboxes     1708  0.0  0.2 664176 20404 ?        Sl   07:12   0:00 /usr/libexec/gnome-shell-calendar-server
-osboxes     1714  0.0  0.4 689712 34904 ?        Ssl  07:12   0:00 /usr/libexec/evolution-source-registry
-osboxes     1721  0.0  0.0 157636  6228 ?        Sl   07:12   0:00 /usr/libexec/dconf-service
-osboxes     1724  0.0  0.0 172268  6708 ?        Ssl  07:12   0:00 /usr/libexec/gvfsd-metadata
-osboxes     1733  0.0  0.5 764696 44968 ?        Ssl  07:12   0:02 /usr/libexec/evolution-calendar-factory
-osboxes     1742  0.0  0.3 690904 30020 ?        Ssl  07:12   0:00 /usr/libexec/evolution-addressbook-factory
-osboxes     1774  0.0  0.0 163116  7320 ?        Sl   07:12   0:00 /usr/libexec/at-spi2-registryd --use-gnome-session
-osboxes     1776  0.0  0.3 2608332 27668 ?       Sl   07:12   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
-osboxes     1782  0.0  0.1 324012  8388 ?        Sl   07:12   0:00 /usr/libexec/gvfsd-trash --spawner :1.3 /org/gtk/gvfs/exec_spaw/0
-osboxes     1794  0.0  0.0 319624  6828 ?        Ssl  07:12   0:00 /usr/libexec/gsd-a11y-settings
-osboxes     1797  0.0  0.3 531160 27452 ?        Ssl  07:12   0:00 /usr/libexec/gsd-color
-osboxes     1798  0.0  0.1 382044 16280 ?        Ssl  07:12   0:00 /usr/libexec/gsd-datetime
-osboxes     1799  0.0  0.0 320504  7448 ?        Ssl  07:12   0:04 /usr/libexec/gsd-housekeeping
-osboxes     1800  0.0  0.3 348852 24612 ?        Ssl  07:12   0:00 /usr/libexec/gsd-keyboard
-osboxes     1804  0.0  0.3 653100 28920 ?        Ssl  07:12   0:00 /usr/libexec/gsd-media-keys
-osboxes     1807  0.0  0.3 652028 29848 ?        Ssl  07:12   0:00 /usr/libexec/gsd-power
-osboxes     1808  0.0  0.1 258084 11480 ?        Ssl  07:12   0:00 /usr/libexec/gsd-print-notifications
-osboxes     1810  0.0  0.0 467048  6612 ?        Ssl  07:12   0:00 /usr/libexec/gsd-rfkill
-osboxes     1811  0.0  0.0 245596  6384 ?        Ssl  07:12   0:00 /usr/libexec/gsd-screensaver-proxy
-osboxes     1818  0.0  0.1 475132 10196 ?        Ssl  07:12   0:00 /usr/libexec/gsd-sharing
-osboxes     1824  0.0  0.1 468996  8316 ?        Ssl  07:12   0:00 /usr/libexec/gsd-smartcard
-osboxes     1829  0.0  0.1 331088  9948 ?        Ssl  07:12   0:00 /usr/libexec/gsd-sound
-osboxes     1834  0.0  0.2 348348 23592 ?        Ssl  07:12   0:00 /usr/libexec/gsd-wacom
-osboxes     1839  0.0  0.8 805000 68520 ?        Sl   07:12   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
-osboxes     1847  0.0  0.0 232044  6548 ?        Sl   07:12   0:00 /usr/libexec/gsd-disk-utility-notify
-osboxes     1885  0.0  0.1 350232 15248 ?        Sl   07:12   0:00 /usr/libexec/gsd-printer
-osboxes     1963  0.0  0.1 397604 11516 ?        Sl   07:12   0:02 ibus-daemon --panel disable -r --xim
-osboxes     1964  0.0  0.8 770908 65864 ?        Ssl  07:12   0:01 /usr/libexec/gsd-xsettings
-osboxes     1997  0.0  0.0 172684  7268 ?        Sl   07:12   0:00 /usr/libexec/ibus-memconf
-osboxes     1999  0.0  0.3 355248 29520 ?        Sl   07:12   0:02 /usr/libexec/ibus-extension-gtk3
-osboxes     2004  0.0  0.3 204684 27652 ?        Sl   07:12   0:00 /usr/libexec/ibus-x11 --kill-daemon
-osboxes     2007  0.0  0.0 246616  8012 ?        Sl   07:12   0:00 /usr/libexec/ibus-portal
-osboxes     2062  0.0  0.0 172808  7408 ?        Sl   07:12   0:00 /usr/libexec/ibus-engine-simple
-osboxes     2067  0.0  2.4 1131376 202104 ?      Sl   07:12   0:10 /snap/snap-store/547/usr/bin/snap-store --gapplication-service
-osboxes     2120  0.0  0.0 467508  6940 ?        Ssl  07:12   0:00 /usr/libexec/xdg-document-portal
-root        2132  0.0  0.0   2616  1960 ?        Ss   07:12   0:00 fusermount -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
-osboxes     2215  0.0  0.1 632920 13964 ?        Ssl  07:12   0:02 /usr/libexec/xdg-desktop-portal
-osboxes     2219  0.0  0.3 387372 30152 ?        Ssl  07:12   0:00 /usr/libexec/xdg-desktop-portal-gtk
-root        2364  0.0  0.0      0     0 ?        S<   07:13   0:00 [loop8]
-osboxes     2396  0.1  1.6 38440768 137584 ?     SLsl 07:13   0:37 /snap/code/74/usr/share/code/code --no-sandbox --force-user-env --unity-launch
-osboxes     2398  0.0  0.5 372136 45220 ?        S    07:13   0:00 /snap/code/74/usr/share/code/code --type=zygote --no-zygote-sandbox --no-sandbox
-osboxes     2399  0.0  0.5 372136 45208 ?        S    07:13   0:00 /snap/code/74/usr/share/code/code --type=zygote --no-sandbox
-osboxes     2442  0.0  0.7 460852 60596 ?        Sl   07:13   0:00 /snap/code/74/usr/share/code/code --type=gpu-process --field-trial-handle=15742718676985736321,224342949617926764,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-color-correct-rendering --no-sandbox --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.1 --user-data-dir=/home/osboxes/.config/Code --gpu-preferences=UAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --use-gl=swiftshader-webgl --shared-files
-osboxes     2446  0.0  0.7 427708 59764 ?        Sl   07:13   0:01 /snap/code/74/usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=15742718676985736321,224342949617926764,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=en-US --service-sandbox-type=none --no-sandbox --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.1 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --shared-files=v8_context_snapshot_data:100
-osboxes     2462  0.0  2.1 48832476 173684 ?     Sl   07:13   0:30 /snap/code/74/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=15742718676985736321,224342949617926764,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.1 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/74/usr/share/code/resources/app --no-sandbox --no-zygote --num-raster-threads=1 --renderer-client-id=6 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:9ba9d6fa-6ee9-49d6-a9da-59e4f3c32c08
-osboxes     2498  0.1  1.7 38213712 145028 ?     Sl   07:13   0:33 /snap/code/74/usr/share/code/code --inspect-port=0 /snap/code/74/usr/share/code/resources/app/out/bootstrap-fork --type=extensionHost --skipWorkspaceStorageLock
-osboxes     2525  0.0  1.5 38271204 127072 ?     Sl   07:13   0:15 /snap/code/74/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=15742718676985736321,224342949617926764,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.1 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/74/usr/share/code/resources/app --no-sandbox --no-zygote --disable-blink-features=Auxclick --num-raster-threads=1 --renderer-client-id=8 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:756f89aa-9a13-4d81-a931-f517feedca5d
-osboxes     2685  0.0  0.8 38188564 70968 ?      Sl   07:13   0:02 /snap/code/74/usr/share/code/code /snap/code/74/usr/share/code/resources/app/out/bootstrap-fork --type=watcherService
-osboxes     2806  0.0  0.8 38189588 71764 ?      Sl   07:13   0:04 /snap/code/74/usr/share/code/code /snap/code/74/usr/share/code/resources/app/out/bootstrap-fork --type=ptyHost
-root        2984  0.0  0.0      0     0 ?        S<   07:13   0:00 [loop15]
-root        3087  0.0  0.0      0     0 ?        S<   07:13   0:00 [loop16]
-osboxes     3108  0.4  4.5 3343048 371072 ?      Sl   07:13   2:32 /usr/lib/firefox/firefox -new-window
-osboxes     3122  0.0  0.3 354060 31636 ?        Sl   07:13   0:01 update-notifier
-osboxes     3207  0.1  1.0 685896 83384 ?        Sl   07:13   0:34 /home/osboxes/.vscode/extensions/ms-vscode.cpptools-1.6.0/bin/cpptools
-osboxes     3298  0.0  0.4 190116 38788 ?        Sl   07:14   0:00 /usr/lib/firefox/firefox -contentproc -parentBuildID 20210903235534 -prefsLen 1 -prefMapSize 242534 -appdir /usr/lib/firefox/browser 3108 true socket
-osboxes     3344  0.0  1.9 2461588 154856 ?      Sl   07:14   0:08 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 154 -prefMapSize 242534 -jsInit 285716 -parentBuildID 20210903235534 -appdir /usr/lib/firefox/browser 3108 true tab
-osboxes     3358  0.0  0.8 38154756 70888 ?      Sl   07:14   0:03 /snap/code/74/usr/share/code/code /snap/code/74/usr/share/code/resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=2498
-osboxes     3467  0.0  1.3 2446132 110708 ?      Sl   07:14   0:18 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 5169 -prefMapSize 242534 -jsInit 285716 -parentBuildID 20210903235534 -appdir /usr/lib/firefox/browser 3108 true tab
-osboxes     3720  0.2  2.6 2721028 212012 ?      Sl   07:14   1:09 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 6127 -prefMapSize 242534 -jsInit 285716 -parentBuildID 20210903235534 -appdir /usr/lib/firefox/browser 3108 true tab
-osboxes     4459  0.0  0.4 193288 38492 ?        Sl   07:15   0:00 /usr/lib/firefox/firefox -contentproc -parentBuildID 20210903235534 -prefsLen 8433 -prefMapSize 242534 -appdir /usr/lib/firefox/browser 3108 true rdd
-osboxes     4464  0.0  1.0 2415756 84836 ?       Sl   07:15   0:00 /usr/lib/firefox/firefox -contentproc -childID 5 -isForBrowser -prefsLen 8433 -prefMapSize 242534 -jsInit 285716 -parentBuildID 20210903235534 -appdir /usr/lib/firefox/browser 3108 true tab
-osboxes     7198  0.0  0.6 411420 50500 ?        Ssl  07:21   0:02 /usr/libexec/gnome-terminal-server
-osboxes     7203  0.0  0.0  19880  5572 pts/3    Ss+  07:21   0:00 bash
-osboxes     7315  0.5  2.0 38653384 164884 ?     SLsl 07:21   2:50 /snap/code/75/usr/share/code/code --no-sandbox --force-user-env --unity-launch
-osboxes     7317  0.0  0.5 372136 45164 ?        S    07:21   0:00 /snap/code/75/usr/share/code/code --type=zygote --no-zygote-sandbox --no-sandbox
-osboxes     7318  0.0  0.5 372136 44868 ?        S    07:21   0:00 /snap/code/75/usr/share/code/code --type=zygote --no-sandbox
-osboxes     7365  1.5  2.0 610596 170556 ?       Sl   07:21   7:56 /snap/code/75/usr/share/code/code --type=gpu-process --field-trial-handle=13298955696367950313,5845341343720808449,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-color-correct-rendering --no-sandbox --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/osboxes/.config/Code --gpu-preferences=UAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --use-gl=swiftshader-webgl --shared-files
-osboxes     7394  0.0  0.7 427708 60448 ?        Sl   07:21   0:00 /snap/code/75/usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=13298955696367950313,5845341343720808449,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=en-US --service-sandbox-type=none --no-sandbox --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --shared-files=v8_context_snapshot_data:100
-osboxes     7415  5.7  5.0 53186960 411700 ?     Sl   07:21  29:16 /snap/code/75/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=13298955696367950313,5845341343720808449,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/75/usr/share/code/resources/app --no-sandbox --no-zygote --num-raster-threads=1 --renderer-client-id=6 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:55dfc602-d309-481e-ae44-c17cd79b2bc3
-osboxes     7647  0.1  1.7 38272228 140100 ?     Sl   07:21   0:35 /snap/code/75/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=13298955696367950313,5845341343720808449,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/75/usr/share/code/resources/app --no-sandbox --no-zygote --disable-blink-features=Auxclick --num-raster-threads=1 --renderer-client-id=8 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:3d94eb98-d6a2-4054-8f34-5c1b39c046d5
-osboxes     7663  0.7  2.4 38240504 196388 ?     Sl   07:21   3:40 /snap/code/75/usr/share/code/code --inspect-port=0 /snap/code/75/usr/share/code/resources/app/out/bootstrap-fork --type=extensionHost --skipWorkspaceStorageLock
-osboxes    11486  0.4  1.2 726460 104040 ?       Sl   07:22   2:07 /home/osboxes/.vscode/extensions/ms-vscode.cpptools-1.6.0/bin/cpptools
-osboxes    11705  0.0  0.8 38154756 70896 ?      Sl   07:22   0:03 /snap/code/75/usr/share/code/code /snap/code/75/usr/share/code/resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=7663
-osboxes    12145  0.2  0.8 38222732 72676 ?      Sl   07:23   1:13 /snap/code/75/usr/share/code/code /snap/code/75/usr/share/code/resources/app/out/bootstrap-fork --type=watcherService
-root       21461  0.0  0.0      0     0 ?        I<   07:25   0:00 [xfsalloc]
-root       21462  0.0  0.0      0     0 ?        I<   07:25   0:00 [xfs_mru_cache]
-root       21465  0.0  0.0      0     0 ?        S    07:25   0:00 [jfsIO]
-root       21466  0.0  0.0      0     0 ?        S    07:25   0:00 [jfsCommit]
-root       21467  0.0  0.0      0     0 ?        S    07:25   0:00 [jfsSync]
-osboxes    23181  0.0  0.0  21116  4168 pts/3    T    07:59   0:00 git push
-osboxes    23182  0.0  0.0  21112  4008 pts/3    T    07:59   0:00 /usr/lib/git-core/git remote-https origin https://github.com/joshuakim135/Linux-Shell.git
-osboxes    23183  0.0  0.1 116348 15852 pts/3    T    07:59   0:00 /usr/lib/git-core/git-remote-https origin https://github.com/joshuakim135/Linux-Shell.git
-root       24266  0.0  0.1  80668 13980 ?        Ss   08:20   0:00 /usr/sbin/cupsd -l
-root       24267  0.0  0.1 179080 12912 ?        Ssl  08:20   0:00 /usr/sbin/cups-browsed
-osboxes    28713  0.0  0.9 674512 80204 ?        Sl   09:33   0:04 /usr/bin/nautilus --gapplication-service
-root       38415  0.0  0.9 514488 75220 ?        Ssl  11:56   0:02 /usr/libexec/fwupd/fwupd
-osboxes    40480  0.3  1.0 38219440 83388 ?      Sl   12:40   0:43 /snap/code/75/usr/share/code/code /snap/code/75/usr/share/code/resources/app/out/bootstrap-fork --type=ptyHost
-osboxes    40492  0.0  0.0  19884  5280 pts/0    Ss+  12:40   0:00 /usr/bin/bash
-osboxes    40495  0.0  0.0  19884  5476 pts/1    Ss+  12:40   0:00 /usr/bin/bash
-osboxes    42684  0.0  0.0   6128  1792 pts/1    T    13:13   0:00 ./a.out
-root       44745  0.0  0.0      0     0 ?        I    14:46   0:00 [kworker/u2:1-events_unbound]
-osboxes    45380  0.0  0.7 2646836 58384 ?       Sl   15:01   0:00 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com -M 0 -D 72:27:1288:741:1
-root       45535  0.0  0.0      0     0 ?        I    15:01   0:00 [kworker/0:0-cgroup_destroy]
-osboxes    46620  0.0  0.0   6128  1732 pts/1    T    15:13   0:00 ./a.out
-osboxes    46778  0.0  0.0   6128  1792 pts/1    T    15:14   0:00 ./a.out
-osboxes    46989  0.0  0.0   6128  1796 pts/1    T    15:14   0:00 ./a.out
-osboxes    47164  0.0  0.0   6128  1792 pts/1    T    15:16   0:00 ./a.out
-osboxes    47317  0.0  0.0   6128  1732 pts/1    T    15:16   0:00 ./a.out
-osboxes    47645  0.0  0.0   6128  1668 pts/1    T    15:20   0:00 ./a.out
-osboxes    47846  0.0  0.0   6128  1732 pts/1    T    15:20   0:00 ./a.out
-osboxes    48040  0.0  0.0   6128  1792 pts/1    T    15:21   0:00 ./a.out
-root       48322  0.1  0.0      0     0 ?        I    15:23   0:01 [kworker/0:1-events]
-osboxes    48388  0.0  0.0   6128  1796 pts/1    T    15:23   0:00 ./a.out
-osboxes    48638  0.0  0.0   6128  1668 pts/1    T    15:24   0:00 ./a.out
-root       48858  0.0  0.0      0     0 ?        I    15:26   0:00 [kworker/u2:0-events_freezable_power_]
-osboxes    49180  0.0  0.0   6128  1796 pts/1    T    15:29   0:00 ./a.out
-osboxes    49399  0.0  0.0   6128  1728 pts/1    T    15:30   0:00 ./a.out
-osboxes    49406  0.3  1.4 4808820 117148 ?      Sl   15:30   0:04 /home/osboxes/.vscode/extensions/ms-vscode.cpptools-1.6.0/bin/cpptools-srv 11486 {910F5586-03AA-4F07-8019-C74C293D5783}
-osboxes    49992  0.0  0.0   6128  3452 pts/1    T    15:33   0:00 ./a.out
-osboxes    50738  0.0  0.0   6128  1796 pts/1    T    15:35   0:00 ./a.out
-osboxes    51701  0.0  0.0   6128  3348 pts/1    T    15:44   0:00 ./a.out
-root       51845  0.0  0.0      0     0 ?        I    15:44   0:00 [kworker/u2:2-ext4-rsv-conversion]
-osboxes    53115  0.0  0.0  19884  5496 pts/2    Ss   15:45   0:00 /usr/bin/bash
-osboxes    53742  0.0  0.0  21092  3536 pts/2    R+   15:48   0:00 ps aux
+#include <iostream>
+#include <string>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <vector>
+
+using namespace std;
+
+vector<string> split(string &str, string delim=" ") {
+    size_t start;
+    size_t end = 0;
+    vector<string> out;
+    size_t i = 0;
+    
+    int start_not_allowed = -1;
+    int end_not_allowed = -1;
+
+    if (((start = str.find("\"")) != string::npos) || ((start = str.find("\'")) != string::npos)) {
+        start_not_allowed = start;
+    }
+    if (start_not_allowed != -1) {
+        for (int i = start_not_allowed; i < str.length(); i++) {
+            if ((str[i] == '\"') || str[i] == '\'')  {
+                end_not_allowed = i;
+            }
+        }
+    }
+    
+    //if '|' is detected, delim = |
+    /*
+    if ((start = str.find("|")) != string::npos) {
+        if (!(start >= start_not_allowed && start <= end_not_allowed)) {
+            delim = "|";
+        }
+    }*/
+    
+    while ((start = str.find_first_not_of(delim, end)) != string::npos) {
+        if ((start_not_allowed <= start) && (start <= end_not_allowed)) { // if between quotes
+            if ((start_not_allowed != -1) && (end_not_allowed != -1)) {
+                // add quoted block to vector
+                if (end_not_allowed - start_not_allowed > 1) {
+                    start_not_allowed += 1;
+                    out.push_back(str.substr(start_not_allowed, end_not_allowed - start_not_allowed));
+                } else {
+                    out.push_back("");
+                }
+
+                // set end = end_not_allowed
+                end = str.find(delim, end_not_allowed + 1);
+                if (end == string::npos) {
+                    out.push_back(str.substr(end_not_allowed + 1, str.size()-1));
+                }
+            } else {
+                cout << "Invalid syntax" << endl;
+            }
+        } else if (delim == "|" && i > 0) {
+            end = str.find(delim, start);
+            out.push_back(str.substr(start + 1, end - start));
+        } else {
+            end = str.find(delim, start);
+            out.push_back(str.substr(start, end - start));
+        }
+        i++;
+    }
+
+    return out;
+}
+
+char** vec_to_char_array (vector<string>& parts) {
+    char** result = new char * [parts.size() + 1]; // add 1 for the NULL pointer at the end
+    for (int i = 0; i < parts.size(); i++) {
+        result[i] = (char*) parts[i].c_str();
+    }
+    result [parts.size()] = NULL;
+    return result;
+}
+
+string trim (string input) {
+    int i = 0;
+    while (i < input.size() && input[i] == ' ')
+        i++;
+    if (i < input.size())
+        input = input.substr(i);
+    else {
+        return "";
+    }
+
+    i = input.size() - 1;
+    while (i >= 0 && input[i] == ' ')
+        i--;
+    if (i >= 0)
+        input = input.substr (0, i+1);
+    else
+        return "";
+    
+    return input;
+}
+
+int main() {
+    int in_def = dup(0);
+    int out_def = dup(1);
+    
+    vector<int> bgs;
+    string previousCmd;
+
+    while (true) {
+        // reset file descriptor
+        dup2(in_def, 0);
+        dup2(out_def, 1);
+
+        // clean up background process
+        for (int i = 0; i < bgs.size(); i++) {
+           if (waitpid(bgs[i], 0, WNOHANG) == bgs[i]) {
+               cout << "Process: " << bgs[i] << " ended" << endl;
+               bgs.erase (bgs.begin() + i);
+               i--;
+           }
+        }
+
+        // shell prompt
+        string userName = getlogin();
+        cout << userName << "$ ";
+        string inputline;
+        getline(cin, inputline);
+
+        // check if exit
+        if (inputline == string("exit")) {
+            cout << "Bye!1 End of shell" << endl;
+            break;
+        }
+
+        bool bg = false;
+        inputline = trim(inputline);
+
+        // if inputline has & at end
+        if (inputline[inputline.size()-1] == '&') {
+            bg = true;
+            inputline = inputline.substr (0, inputline.size()-1);
+        }
+        
+        // check if it's a 'cd' command
+        if (inputline.length() > 2) {
+            if ((inputline[0] == 'c') && (inputline[1] == 'd')) {
+                // if cd command, execute it here
+                // check if 'cd -' command
+                if (inputline.length() > 3) {
+                    if (inputline[3] == '-') {
+                        // get current working directory
+                        char buffer[260];
+                        char *path = getcwd(buffer, 260);
+                        string paththing = path;
+                        if (path) {
+                            // get current dir
+                            string CurrentPath;
+                            CurrentPath = path;
+                            // change current dir to prev dir
+                            chdir(previousCmd.c_str());
+
+                            // change previous dir to old current
+                            previousCmd = CurrentPath;
+                            continue;
+                        }
+                    }
+                }
+                string dir_str = "";
+                for (int i = 2; i < inputline.size(); i++) {
+                    dir_str += inputline[i];
+                }
+                dir_str = dir_str.substr(1, dir_str.length()-1);
+
+                char buffer2[260];
+                char *path2 = getcwd(buffer2, 260);
+                string CurrentPath2;
+                CurrentPath2 = path2;
+                int rx = chdir(dir_str.c_str());
+                if (chdir < 0) {
+                    cout << "chdir() failed" << endl;
+                } else {
+                    previousCmd = CurrentPath2;
+                }
+                continue;
+            } 
+        }
+
+        // check for '<' and '>'
+        bool in = false, out = false;
+        if (inputline.find("<") != string::npos) {
+            in = true;
+        }
+        if (inputline.find(">") != string::npos) {
+            out = true;
+        }
+
+        // split by '|'
+        vector<string> c = split(inputline, "|");
+
+        // fork + exec starts here
+        int fd[2];
+        int pid = fork();
+        if (pid == -1) {
+            perror("fork");
+        } else if (pid == 0) { // if child
+            vector<string> parts = split(inputline);
+            for (string word : parts) {
+                cout << word << endl;
+            }
+        
+
+            char** args = vec_to_char_array(parts);
+            execvp (args[0], args);
+        } else { // if parent
+            if (!bg) {
+                waitpid(pid, 0, 0); // wait for child process
+            } else {
+                bgs.push_back(pid);
+            }
+        }
+    }
+
+    return 0; 
+}

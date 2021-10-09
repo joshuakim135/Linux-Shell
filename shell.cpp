@@ -6,78 +6,10 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <vector>
+#include <sstream>
+#include <iomanip>
 
 using namespace std;
-
-vector<string> split(string &str, string delim=" ") {
-    size_t start;
-    size_t end = 0;
-    vector<string> out;
-    size_t i = 0;
-    
-    int start_not_allowed = -1;
-    int end_not_allowed = -1;
-
-    if (((start = str.find("\"")) != string::npos) || ((start = str.find("\'")) != string::npos)) {
-        start_not_allowed = start;
-    }
-    if (start_not_allowed != -1) {
-        for (int i = start_not_allowed; i < str.length(); i++) {
-            if ((str[i] == '\"') || str[i] == '\'')  {
-                end_not_allowed = i;
-            }
-        }
-    }
-    
-    //if '|' is detected, delim = |
-    /*
-    if ((start = str.find("|")) != string::npos) {
-        if (!(start >= start_not_allowed && start <= end_not_allowed)) {
-            delim = "|";
-        }
-    }*/
-    
-    while ((start = str.find_first_not_of(delim, end)) != string::npos) {
-        if ((start_not_allowed <= start) && (start <= end_not_allowed)) { // if between quotes
-            if ((start_not_allowed != -1) && (end_not_allowed != -1)) {
-                // add quoted block to vector
-                if (end_not_allowed - start_not_allowed > 1) {
-                    start_not_allowed += 1;
-                    out.push_back(str.substr(start_not_allowed, end_not_allowed - start_not_allowed));
-                } else {
-                    out.push_back("");
-                }
-
-                // set end = end_not_allowed
-                end = str.find(delim, end_not_allowed + 1);
-                if (end == string::npos) {
-                    out.push_back(str.substr(end_not_allowed + 1, str.size()-1));
-                }
-            } else {
-                cout << "Invalid syntax" << endl;
-            }
-        } else if (delim == "|" && i > 0) {
-            end = str.find(delim, start);
-            out.push_back(str.substr(start + 1, end - start));
-        } else {
-            end = str.find(delim, start);
-            out.push_back(str.substr(start, end - start));
-        }
-        i++;
-    }
-
-    return out;
-}
-
-char** vec_to_char_array (vector<string>& parts) {
-    char** result = new char * [parts.size() + 1]; // add 1 for the NULL pointer at the end
-    for (int i = 0; i < parts.size(); i++) {
-        result[i] = (char*) parts[i].c_str();
-    }
-    result [parts.size()] = NULL;
-    return result;
-}
-
 string trim (string input) {
     int i = 0;
     while (i < input.size() && input[i] == ' ')
@@ -99,7 +31,52 @@ string trim (string input) {
     return input;
 }
 
+vector<string> split(string &str, char delim = ' ') {
+    vector<string> out;
+    if (delim == '|') {
+        std::stringstream ss(str);
+        string item;
+
+        while(getline(ss, item, delim)) {
+            out.push_back(trim(item));
+        }
+    } else {
+        std::istringstream iss(str);
+        string s;
+        while (iss >> std::quoted(s)) {
+            out.push_back(trim(s));
+        }
+    }
+    return out;
+}
+
+char** vec_to_char_array (vector<string>& parts) {
+    char** result = new char * [parts.size() + 1]; // add 1 for the NULL pointer at the end
+    for (int i = 0; i < parts.size(); i++) {
+        result[i] = (char*) parts[i].c_str();
+    }
+    result [parts.size()] = NULL;
+    return result;
+}
+
 int main() {
+    /*
+    string str = "echo \"Hello World\" | echo \"Hi\"";
+    cout << "str: " << str << endl;
+    vector<string> splitted = split(str, '|');
+    for (string word : splitted) {
+        cout << word << endl;
+    }
+
+    cout << splitted[0] << " => " << endl;
+    vector<string> c = split(splitted[0]);
+    for (string c_str : c) {
+        cout << " word: " << c_str << endl;
+    }
+
+    exit(0);
+    */
+
     int in_def = dup(0);
     int out_def = dup(1);
     
@@ -195,27 +172,26 @@ int main() {
         }
 
         // split by '|'
-        vector<string> c = split(inputline, "|");
+        vector<string> c = split(inputline, '|');
 
         // fork + exec starts here
-        int fd[2];
-        int pid = fork();
-        if (pid == -1) {
-            perror("fork");
-        } else if (pid == 0) { // if child
-            vector<string> parts = split(inputline);
-            for (string word : parts) {
-                cout << word << endl;
-            }
+        for (int i = 0; i < c.size(); i++) {
+            int fd[2];
+            pipe(fd);
+            int pid = fork();
+            if (pid == -1) {
+                perror("fork");
+            } else if (pid == 0) { // if child
+                vector<string> parts = split(c[i]);
 
-
-            char** args = vec_to_char_array(parts);
-            execvp (args[0], args);
-        } else { // if parent
-            if (!bg) {
-                waitpid(pid, 0, 0); // wait for child process
-            } else {
-                bgs.push_back(pid);
+                char** args = vec_to_char_array(parts);
+                execvp (args[0], args);
+            } else { // if parent
+                if (!bg) {
+                    waitpid(pid, 0, 0); // wait for child process
+                } else {
+                    bgs.push_back(pid);
+                }
             }
         }
     }
