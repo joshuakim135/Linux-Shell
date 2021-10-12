@@ -1,13 +1,10 @@
 #include <iostream>
 #include <string>
-#include <stdio.h>
 #include <unistd.h>
 #include <sys/wait.h>
-#include <sys/stat.h>
 #include <fcntl.h>
 #include <vector>
 #include <sstream>
-#include <iomanip>
 
 using namespace std;
 
@@ -25,65 +22,47 @@ bool isPipeBetweenQuotes (string input) {
     return false;
 }
 
-string awkTrim(string input) {
-    if (input.find("\'") == -1) {
+string trimAwk(string input) {
+    if (input.find("\'") == string::npos) {
         return input;
     }
-    size_t second = input.find_last_of("\'");
-    input = input.substr(1, second - 1);
-    while (input.find(" ") != -1) {
-        size_t space = input.find_last_of(" ");
+    int last = input.find_last_of("\'");
+    input = input.substr(1, last - 1);
+    while (input.find(" ") != string::npos) {
+        int space = input.find_last_of(" ");
         input = input.substr(0, space) + input.substr(space + 1);
     }
-
     return input;
 }
 
+string trimQuoteHelper (size_t first, size_t last, string trimmedInput) {
+    // trim any "quotes"
+    if (trimmedInput.find("\"") != string::npos) {
+        // if we find quotation marks
+        string quoteTrimmed;
+        size_t first = trimmedInput.find_first_of("\"");
+        if (first > 0) {
+            quoteTrimmed = trimmedInput.substr(0, first);
+        }
+        trimmedInput = trimmedInput.substr(first + 1);
+        size_t second = trimmedInput.find_last_of("\"");
+        quoteTrimmed.append(trimmedInput.substr(0, second));
+
+        return quoteTrimmed;
+    }
+    return trimmedInput;
+}
+
 string trim (string input) {
-    string trimmed;
+    // trim whitespace at beginning and end
+    string trimmedInput;
     size_t first = input.find_first_not_of(" ");
     size_t last = input.find_last_not_of(" ");
     input = input.substr(first);
-    trimmed = input.substr(0, last + 1);
-    // so far, the whitespace at the beginning and end has been removed
-    // now we must remove quotation marks "if found"
-    if (trimmed.find("\"") != string::npos)
-    {
-        // if we find quotation marks
-        string trimmed2;
-        size_t first = trimmed.find_first_of("\""); // find index of first quotation mark
-        if (first > 0)
-        {
-            trimmed2 = trimmed.substr(0, first);
-        }
-        trimmed = trimmed.substr(first + 1);
-        size_t second = trimmed.find_last_of("\""); //find index of second quotation mark
-        trimmed2.append(trimmed.substr(0, second));
+    trimmedInput = input.substr(0, last + 1);
 
-        return trimmed2; // returns trimmed string with no quotation marks
-    }
-    return trimmed; // returns trimmed string
-    // trim beginning
-    /*
-    while (input.size() > 0) {
-        if (input[0] == ' ') {
-            input.erase(0,1);
-        } else {
-            break;
-        }
-    }
-
-    // trim ending
-    while (input.size() > 0) {
-        if (input[input.size()-1] == ' ') {
-            input.erase(input.size()-1, 1);
-        } else {
-            break;
-        }
-    }
-
-    return input;
-    */
+    // returns trimmedInput string
+    return trimQuoteHelper (first, last, trimmedInput);
 }
 
 vector<string> split(string str, char delim = ' ') {
@@ -96,60 +75,6 @@ vector<string> split(string str, char delim = ' ') {
         out.push_back(str.substr(start, end - start));
     }
     return out;
-    /*
-    vector<string> result;
-    string word = "";
-    int num = 0;
-    str = str + delim;
-
-    if (isPipeBetweenQuotes(str)) {
-        delim = ' ';
-    }
-
-    if (delim == ' ') {
-        for (int i = 0; i < str.size(); i++) {
-            char current = str[i];
-            if (current == '\"') {
-                size_t endDQ = str.find('\"', i + 1);
-                result.push_back(str.substr(i+1, endDQ - i - 1));
-                i = endDQ;
-            } else if (current == '\'') {
-                size_t endQuote = str.find("\'", i + 1);
-                result.push_back(str.substr(i+1, endQuote - i - 1));
-                i = endQuote;
-            } else if (current == '{') {
-                size_t endBrace = str.find('}', i + 1);
-                result.push_back(str.substr(i+1, endBrace - i -1));
-                i = endBrace;
-            } else if (current == delim) {
-                if (word.size() != 0) {
-                    result.push_back(word);
-                }
-                word = "";
-            } else {
-                word += current;
-            }
-        }
-    }
-
-    if (delim == '|') {
-        for (int i = 0; i < str.size(); i++) {
-            if (str[i] != delim) {
-                word = word + str[i];
-            } else {
-                if (word.size() != 0) {
-                    result.push_back(word);
-                }
-                word = "";
-            }
-        }
-    }
-
-    for (string s : result) {
-        trim(s);
-    }
-    return result;
-    */
 }
 
 char** vec_to_char_array (vector<string>& parts) {
@@ -161,13 +86,32 @@ char** vec_to_char_array (vector<string>& parts) {
     return result;
 }
 
+void fileOutputRedirect (string inputline, int fileOutput, vector<string> &c, int i) {
+    string command = inputline.substr(0, fileOutput);
+    string filename = trim(inputline.substr(fileOutput + 1)); // substrings all the way to the end from index pos+1
+
+    c[i] = command;
+    int fd = open(filename.c_str(), O_RDONLY | O_CREAT, S_IWUSR | S_IRUSR);
+    dup2(fd, 0);
+    close(fd);
+}
+
+void fileInputRedirect (string inputline, int fileInput, vector<string> &c, int i) {
+    string command = inputline.substr(0, fileInput);
+    string filename = trim(inputline.substr(fileInput + 1)); // substrings all the way to the end from index pos+1
+
+    c[i] = command;
+    int fd = open(filename.c_str(), O_CREAT | O_WRONLY | O_TRUNC | O_RDONLY, S_IWUSR | S_IRUSR | S_IROTH);
+    dup2(fd, 1);
+    close(fd);
+}
+
 int main() {
     int in_def = dup(0);
     int out_def = dup(1);
     
-    vector<int> zombie;
+    vector<int> bgs;
     string previousCmd;
-    vector<string> directories;
 
     while (true) {
         // reset file descriptor
@@ -175,10 +119,10 @@ int main() {
         dup2(out_def, 1);
 
         // clean up background process
-        for (int i = 0; i < zombie.size(); i++) {
-           if (waitpid(zombie[i], 0, WNOHANG) == zombie[i]) {
-               cout << "Process: " << zombie[i] << " ended" << endl;
-               zombie.erase (zombie.begin() + i);
+        for (int i = 0; i < bgs.size(); i++) {
+           if (waitpid(bgs[i], 0, WNOHANG) == bgs[i]) {
+               cout << "Process: " << bgs[i] << " ended" << endl;
+               bgs.erase (bgs.begin() + i);
                i--;
            }
         }
@@ -186,8 +130,6 @@ int main() {
         // shell prompt
         string userName = getlogin();
         cout << userName << "$ ";
-        char buffer[1000];
-        string currentDir = getcwd(buffer, sizeof(buffer)); // gets the current working directory and stores it in variable
         string inputline;
         getline(cin, inputline);
         if (inputline == string("exit")) {
@@ -262,12 +204,12 @@ int main() {
         inputline = trim(inputline);
         vector<string> c = split(inputline, '|');
 
-        // do this for each pipe
+        // for each pipe...
         for (int i = 0; i < c.size(); i++) {
             int fds[2];
             pipe(fds);
 
-            // & background processes
+            // check for '&'
             bool bg = false;
             int bgp = c[i].find("&");
             if (bgp != string::npos) {
@@ -275,44 +217,38 @@ int main() {
                 bg = true;
                 cerr << "Found a background process" << endl;
             }
-
+            
+            // fork + exec starts here
             int pid = fork();
-            if (pid == 0)
-            {
+            if (pid == 0) {
                 c[i] = trim(c[i]);
-                // awk function testing
-                if (c[i].find("awk") == 0)
-                {
-                    c[i] = "awk " + awkTrim(c[i].substr(c[i].find("\'")));
+
+                //  check for awk
+                if (c[i].find("awk") == 0) {
+                    c[i] = "awk " + trimAwk(c[i].substr(c[i].find("\'")));
                 }
 
-                // ls > a.txt and < a.txt
-                int pos1 = inputline.find('>'); // gets the index where ">" is found
-                int pos2 = inputline.find('<'); // gets the index where "<" is found
-                if (pos1 >= 0)
-                {
-                    // if the ">" is found
-                    string command = inputline.substr(0, pos1);
-                    string filename = trim(inputline.substr(pos1 + 1)); // substrings all the way to the end from index pos+1
-
-                    c[i] = command;
-                    int fd = open(filename.c_str(), O_WRONLY | O_CREAT | O_RDONLY, S_IWUSR | S_IRUSR);
-                    dup2(fd, 1);
-                    close(fd);
+                // file input output redirection
+                int fileInput = inputline.find('>');
+                int fileOutput = inputline.find('<');
+                if ((fileInput != string::npos) || (fileOutput != string::npos)) {
+                    if ((fileInput >= 0 && fileOutput >= 0) && (fileInput > fileOutput)) {
+                        fileOutputRedirect(inputline, fileOutput, c, i);
+                        fileInputRedirect(inputline, fileInput, c, i);
+                    } else if ((fileInput >= 0 && fileOutput >= 0) && (fileOutput > fileInput)) {
+                        fileInputRedirect(inputline, fileInput, c, i);
+                        fileOutputRedirect(inputline, fileOutput, c, i);
+                    } else {
+                        if (fileOutput >= 0) {
+                            fileOutputRedirect(inputline, fileOutput, c, i);
+                        }
+                        if (fileInput >= 0) {
+                            fileInputRedirect(inputline, fileInput, c, i);
+                        }
+                    }
                 }
 
-                if (pos2 >= 0)
-                {
-                    // if the "<" is found
-                    string command = inputline.substr(0, pos2);
-                    string filename = trim(inputline.substr(pos2 + 1)); // substrings all the way to the end from index pos+1
-
-                    c[i] = command;
-                    int fd = open(filename.c_str(), O_RDONLY | O_CREAT, S_IWUSR | S_IRUSR);
-                    dup2(fd, 0);
-                    close(fd);
-                }
-
+                // redirect stdout to fd[1] so that it can write to the other side
                 if (i < c.size() - 1) {
                     dup2(fds[1], 1);
                 }
@@ -327,10 +263,10 @@ int main() {
                     if (i == c.size() - 1) {
                         waitpid(pid, 0, 0);
                     } else {
-                        zombie.push_back(pid);
+                        bgs.push_back(pid);
                     }
                 } else {
-                    zombie.push_back(pid);
+                    bgs.push_back(pid);
                 }
 
                 dup2(fds[0], 0);
