@@ -50,7 +50,7 @@ root         159  0.0  0.0      0     0 ?        S    Oct11   0:00 [scsi_eh_2]
 root         160  0.0  0.0      0     0 ?        I<   Oct11   0:00 [scsi_tmf_2]
 root         189  0.0  0.0      0     0 ?        S    Oct11   0:02 [jbd2/sda1-8]
 root         190  0.0  0.0      0     0 ?        I<   Oct11   0:00 [ext4-rsv-conver]
-root         229  0.0  0.3  89800 28820 ?        S<s  Oct11   0:06 /lib/systemd/systemd-journald
+root         229  0.0  0.3  89800 28840 ?        S<s  Oct11   0:06 /lib/systemd/systemd-journald
 root         254  0.0  0.0      0     0 ?        S    Oct11   0:15 [irq/18-vmwgfx]
 root         255  0.0  0.0  23956  4560 ?        Ss   Oct11   0:00 /lib/systemd/systemd-udevd
 root         256  0.0  0.0      0     0 ?        I<   Oct11   0:00 [ttm_swap]
@@ -108,7 +108,7 @@ osboxes     1412  0.0  0.0  16352  6952 ?        Ss   Oct11   0:08 /lib/systemd/
 osboxes     1414  0.0  0.0 103760  1312 ?        S    Oct11   0:00 (sd-pam)
 osboxes     1429  0.0  0.0  90680  2636 ?        S<sl Oct11   0:00 /usr/bin/pipewire
 osboxes     1430  0.0  0.0  82828  2368 ?        S<sl Oct11   0:00 /usr/bin/pipewire-media-session
-osboxes     1431  0.1  0.1 2531756 10884 ?       S<sl Oct11   1:56 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+osboxes     1431  0.1  0.1 2531756 10884 ?       S<sl Oct11   1:57 /usr/bin/pulseaudio --daemonize=no --log-target=journal
 osboxes     1433  0.0  0.1 668900 12812 ?        SNsl Oct11   0:34 /usr/libexec/tracker-miner-fs
 osboxes     1436  0.0  0.0  10072  5216 ?        Ss   Oct11   0:28 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
 osboxes     1452  0.0  0.0 249840  6856 ?        Ssl  Oct11   0:01 /usr/libexec/gvfsd
@@ -125,10 +125,10 @@ osboxes     1538  0.0  0.0 398472  5620 ?        Sl   Oct11   0:01 /usr/libexec/
 osboxes     1549  0.0  0.0 100968  3452 ?        Ssl  Oct11   0:00 /usr/libexec/gnome-session-ctl --monitor
 osboxes     1550  0.0  0.0 323072  5424 ?        Ssl  Oct11   0:09 /usr/libexec/gvfs-afc-volume-monitor
 osboxes     1565  0.0  0.1 525896  9172 ?        Ssl  Oct11   0:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
-osboxes     1598  4.8  3.6 4169240 295812 ?      Ssl  Oct11  90:24 /usr/bin/gnome-shell
+osboxes     1598  4.8  3.6 4169252 295796 ?      Ssl  Oct11  90:31 /usr/bin/gnome-shell
 osboxes     1603  0.0  0.0 306780  5356 ?        Sl   Oct11   0:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
 osboxes     1609  0.0  0.0   8384  3564 ?        S    Oct11   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
-osboxes     1651  0.3  0.2 468720 21412 ?        Sl   Oct11   6:23 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.SNRIA1 -listen 4 -listen 5 -displayfd 6 -initfd 7
+osboxes     1651  0.3  0.2 468716 21412 ?        Sl   Oct11   6:23 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.SNRIA1 -listen 4 -listen 5 -displayfd 6 -initfd 7
 osboxes     1703  0.0  0.0 245564  5048 ?        Ssl  Oct11   0:00 /usr/libexec/xdg-permission-store
 osboxes     1708  0.0  0.0 664176  7980 ?        Sl   Oct11   0:01 /usr/libexec/gnome-shell-calendar-server
 osboxes     1714  0.0  0.1 689712 12660 ?        Ssl  Oct11   0:01 /usr/libexec/evolution-source-registry
@@ -178,26 +178,26 @@ root       21465  0.0  0.0      0     0 ?        S    Oct11   0:00 [jfsIO]
 root       21466  0.0  0.0      0     0 ?        S    Oct11   0:00 [jfsCommit]
 root       21467  0.0  0.0      0     0 ?        S    Oct11   0:00 [jfsSync]
 root       60093  0.0  0.0      0     0 ?        S<   Oct11   0:00 [loop0]
-osboxes   106801  0.6  1.3 38659632 107348 ?     SLsl 07:41   4:45 /snap/code/76/usr/share/code/code --no-sandbox --force-user-env --unity-launch
+osboxes   106801  0.6  1.3 38659632 107384 ?     SLsl 07:41   4:45 /snap/code/76/usr/share/code/code --no-sandbox --force-user-env --unity-launch
 osboxes   106803  0.0  0.0 372152  6852 ?        S    07:41   0:00 /snap/code/76/usr/share/code/code --type=zygote --no-zygote-sandbox --no-sandbox
 osboxes   106804  0.0  0.0 372152  5276 ?        S    07:41   0:00 /snap/code/76/usr/share/code/code --type=zygote --no-sandbox
-osboxes   106843  2.3  0.8 574184 71576 ?        Sl   07:41  18:38 /snap/code/76/usr/share/code/code --type=gpu-process --field-trial-handle=906869257297640244,16219200294567860063,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-color-correct-rendering --no-sandbox --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/osboxes/.config/Code --gpu-preferences=UAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --use-gl=swiftshader-webgl --shared-files
+osboxes   106843  2.3  0.8 574216 71656 ?        Sl   07:41  18:40 /snap/code/76/usr/share/code/code --type=gpu-process --field-trial-handle=906869257297640244,16219200294567860063,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-color-correct-rendering --no-sandbox --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/osboxes/.config/Code --gpu-preferences=UAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --use-gl=swiftshader-webgl --shared-files
 osboxes   106845  0.0  0.1 428768 15976 ?        Sl   07:41   0:01 /snap/code/76/usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=906869257297640244,16219200294567860063,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=en-US --service-sandbox-type=none --no-sandbox --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --shared-files=v8_context_snapshot_data:100
-osboxes   106862 11.0  9.8 61973060 798952 ?     Sl   07:41  86:05 /snap/code/76/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=906869257297640244,16219200294567860063,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/76/usr/share/code/resources/app --no-sandbox --no-zygote --num-raster-threads=1 --renderer-client-id=6 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:68213f0e-7188-43b2-a2dc-9579e8523a4c
-osboxes   106907  0.0  0.7 38273268 63516 ?      Sl   07:41   0:30 /snap/code/76/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=906869257297640244,16219200294567860063,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/76/usr/share/code/resources/app --no-sandbox --no-zygote --disable-blink-features=Auxclick --num-raster-threads=1 --renderer-client-id=8 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:5a87e44e-a7b6-4277-b408-5eec3546432c
+osboxes   106862 11.0  9.8 61973616 801228 ?     Sl   07:41  86:13 /snap/code/76/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=906869257297640244,16219200294567860063,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/76/usr/share/code/resources/app --no-sandbox --no-zygote --num-raster-threads=1 --renderer-client-id=6 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:68213f0e-7188-43b2-a2dc-9579e8523a4c
+osboxes   106907  0.0  0.7 38273268 64380 ?      Sl   07:41   0:30 /snap/code/76/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=906869257297640244,16219200294567860063,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --enable-crash-reporter=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel --global-crash-keys=48120b53-7648-42fc-a1f2-90cd61b8e221,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/osboxes/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/76/usr/share/code/resources/app --no-sandbox --no-zygote --disable-blink-features=Auxclick --num-raster-threads=1 --renderer-client-id=8 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:5a87e44e-a7b6-4277-b408-5eec3546432c
 osboxes   106919  0.0  0.3 38222748 25260 ?      Sl   07:41   0:45 /snap/code/76/usr/share/code/code /snap/code/76/usr/share/code/resources/app/out/bootstrap-fork --type=watcherService
 osboxes   106937  0.1  0.4 38230724 40128 ?      Sl   07:41   1:05 /snap/code/76/usr/share/code/code /snap/code/76/usr/share/code/resources/app/out/bootstrap-fork --type=ptyHost
 root      109709  0.0  0.0  80668  7560 ?        Ss   08:15   0:00 /usr/sbin/cupsd -l
 root      109710  0.0  0.0 179080  7984 ?        Ssl  08:15   0:00 /usr/sbin/cups-browsed
-osboxes   120632  1.8  3.8 3598648 316828 ?      Sl   12:37   9:11 /usr/lib/firefox/firefox
+osboxes   120632  1.8  3.8 3598744 315896 ?      Sl   12:37   9:14 /usr/lib/firefox/firefox
 osboxes   120719  0.0  0.4 2434624 35008 ?       Sl   12:37   0:08 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 5027 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
 osboxes   120795  0.0  0.1 184956  8716 ?        Sl   12:37   0:00 /usr/lib/firefox/firefox -contentproc -parentBuildID 20210927210923 -prefsLen 6114 -prefMapSize 244079 -appdir /usr/lib/firefox/browser 120632 true rdd
-osboxes   120802  0.1  2.0 2956900 169640 ?      Sl   12:37   0:58 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 6114 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
-osboxes   120814  0.0  0.9 2459240 74812 ?       Sl   12:37   0:09 /usr/lib/firefox/firefox -contentproc -childID 5 -isForBrowser -prefsLen 7006 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
+osboxes   120802  0.1  2.0 2956900 169992 ?      Sl   12:37   0:58 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 6114 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
+osboxes   120814  0.0  0.9 2459240 75072 ?       Sl   12:37   0:09 /usr/lib/firefox/firefox -contentproc -childID 5 -isForBrowser -prefsLen 7006 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
 osboxes   121118  0.0  0.3 2425496 25948 ?       Sl   12:41   0:02 /usr/lib/firefox/firefox -contentproc -childID 7 -isForBrowser -prefsLen 7647 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
-osboxes   121143  0.2  1.3 2784760 109964 ?      Rl   12:41   1:16 /usr/lib/firefox/firefox -contentproc -childID 8 -isForBrowser -prefsLen 7647 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
-osboxes   121234  5.0  1.0 2788060 87208 ?       Rl   12:42  24:25 /usr/lib/firefox/firefox -contentproc -childID 10 -isForBrowser -prefsLen 7647 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
-osboxes   122968  0.2  2.2 2947944 182092 ?      Sl   12:59   1:08 /usr/lib/firefox/firefox -contentproc -childID 11 -isForBrowser -prefsLen 7711 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
+osboxes   121143  0.2  1.3 2785784 111244 ?      Sl   12:41   1:16 /usr/lib/firefox/firefox -contentproc -childID 8 -isForBrowser -prefsLen 7647 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
+osboxes   121234  5.0  1.0 2788156 87844 ?       Sl   12:42  24:26 /usr/lib/firefox/firefox -contentproc -childID 10 -isForBrowser -prefsLen 7647 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
+osboxes   122968  0.2  2.2 2947944 183808 ?      Sl   12:59   1:08 /usr/lib/firefox/firefox -contentproc -childID 11 -isForBrowser -prefsLen 7711 -prefMapSize 244079 -jsInit 286204 -parentBuildID 20210927210923 -appdir /usr/lib/firefox/browser 120632 true tab
 osboxes   123009  0.0  0.0 363164  3788 ?        Sl   12:59   0:01 /usr/lib/speech-dispatcher-modules/sd_dummy /etc/speech-dispatcher/modules/dummy.conf
 osboxes   123012  0.0  0.0 463472  4304 ?        Sl   12:59   0:01 /usr/lib/speech-dispatcher-modules/sd_espeak-ng /etc/speech-dispatcher/modules/espeak-ng.conf
 osboxes   123018  0.0  0.0 172512  2524 ?        Ssl  12:59   0:00 /usr/bin/speech-dispatcher --spawn --communication-method unix_socket --socket-path /run/user/1000/speech-dispatcher/speechd.sock
@@ -215,7 +215,7 @@ osboxes   136080  0.0  0.0   6216  1736 pts/2    T    15:58   0:00 /home/osboxes
 osboxes   137435  0.0  0.0   6216   220 pts/2    T    16:09   0:00 /home/osboxes/Documents/CSCE 313/PA2/Linux-Shell/shell
 osboxes   138252  0.0 10.3 1054876 838956 pts/2  T    16:18   0:08 /home/osboxes/Documents/CSCE 313/PA2/Linux-Shell/shell
 root      144178  0.0  0.0      0     0 ?        S<   16:59   0:00 [loop1]
-root      144213  0.0  0.3 630496 26320 ?        Ssl  16:59   0:01 /usr/lib/snapd/snapd
+root      144213  0.0  0.3 630496 26288 ?        Ssl  16:59   0:01 /usr/lib/snapd/snapd
 osboxes   149992  0.0  0.1 397892  8624 ?        Sl   17:36   0:00 /usr/libexec/gvfsd-network --spawner :1.3 /org/gtk/gvfs/exec_spaw/1
 osboxes   150005  0.0  0.1 325920  8720 ?        Sl   17:36   0:00 /usr/libexec/gvfsd-dnssd --spawner :1.3 /org/gtk/gvfs/exec_spaw/3
 osboxes   151751  0.0  0.0   6216  2212 pts/2    S    17:43   0:00 ./a.out
@@ -228,7 +228,7 @@ osboxes   151813  0.0  0.0   6216   224 pts/2    S    17:43   0:00 ./a.out
 osboxes   152758  0.0  0.0   6216   224 pts/2    S    18:01   0:01 ./a.out
 osboxes   152761  0.0  0.0   6216   224 pts/2    S    18:01   0:01 ./a.out
 root      163659  0.0  0.0      0     0 ?        I    19:25   0:01 [kworker/0:1-cgroup_destroy]
-osboxes   163716  0.4  0.9 676504 81084 ?        Sl   19:28   0:21 /usr/bin/nautilus --gapplication-service
+osboxes   163716  0.5  1.0 676996 81448 ?        Sl   19:28   0:23 /usr/bin/nautilus --gapplication-service
 osboxes   163733  0.2  0.6 411364 49356 ?        Ssl  19:28   0:09 /usr/libexec/gnome-terminal-server
 osboxes   163738  0.0  0.0  20012  5724 pts/1    Ss   19:28   0:00 bash
 osboxes   163873  0.0  0.0   6220  3764 pts/1    T    19:31   0:00 ./a.out
@@ -240,13 +240,23 @@ osboxes   164342  0.0  0.7 2646836 57504 ?       Sl   19:52   0:00 gjs /usr/shar
 osboxes   164870  0.0  0.0   6220  3744 pts/1    T    20:02   0:00 ./a.out
 osboxes   165135  0.0  0.0      0     0 pts/1    Z    20:07   0:00 [awk] <defunct>
 root      165265  0.0  0.0      0     0 ?        I    20:11   0:00 [kworker/u2:0-events_unbound]
-root      165341  0.0  0.0      0     0 ?        I    20:17   0:00 [kworker/u2:2-ext4-rsv-conversion]
-osboxes   166538  0.5  1.7 38225616 143980 ?     Sl   20:30   0:04 /snap/code/76/usr/share/code/code --inspect-port=0 /snap/code/76/usr/share/code/resources/app/out/bootstrap-fork --type=extensionHost --skipWorkspaceStorageLock
+osboxes   166538  0.5  1.7 38225616 144148 ?     Sl   20:30   0:04 /snap/code/76/usr/share/code/code --inspect-port=0 /snap/code/76/usr/share/code/resources/app/out/bootstrap-fork --type=extensionHost --skipWorkspaceStorageLock
 osboxes   166558  0.1  1.0 38158868 83424 ?      Sl   20:30   0:00 /snap/code/76/usr/share/code/code /snap/code/76/usr/share/code/resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=166538
-osboxes   166567  0.1  0.4 714776 39936 ?        Sl   20:30   0:01 /home/osboxes/.vscode/extensions/ms-vscode.cpptools-1.6.0/bin/cpptools
+osboxes   166567  0.1  0.4 714776 40140 ?        Sl   20:30   0:01 /home/osboxes/.vscode/extensions/ms-vscode.cpptools-1.6.0/bin/cpptools
 osboxes   166647  0.0  0.0  19884  5352 pts/4    Ss+  20:30   0:00 /usr/bin/bash
 root      166789  0.0  0.0      0     0 ?        I    20:31   0:00 [kworker/u2:3-events_unbound]
 root      166997  0.0  0.0      0     0 ?        I    20:34   0:00 [kworker/0:2-events]
-osboxes   167117  0.0  0.6 4808828 52944 ?       Sl   20:36   0:00 /home/osboxes/.vscode/extensions/ms-vscode.cpptools-1.6.0/bin/cpptools-srv 166567 {B356832F-7B65-453C-82D0-9CD900810800}
 osboxes   167284  0.0  0.0   6220  3712 pts/1    S+   20:40   0:00 ./a.out
-osboxes   167303  0.0  0.0  21092  3608 pts/1    R+   20:42   0:00 ps aux
+osboxes   167412  0.0  0.0      0     0 pts/1    Z+   20:42   0:00 [ls] <defunct>
+osboxes   167417  0.0  0.6 4808700 50664 ?       Sl   20:42   0:00 /home/osboxes/.vscode/extensions/ms-vscode.cpptools-1.6.0/bin/cpptools-srv 166567 {DC4971CC-C8B4-4C44-9CD2-E5B37880C3D2}
+osboxes   167427  0.0  0.0      0     0 pts/1    Z+   20:43   0:00 [ls] <defunct>
+osboxes   167431  0.0  0.0      0     0 pts/1    Z+   20:43   0:00 [ps] <defunct>
+osboxes   167432  0.0  0.0      0     0 pts/1    Z+   20:43   0:00 [awk] <defunct>
+osboxes   167438  0.0  0.0      0     0 pts/1    Z+   20:43   0:00 [ps] <defunct>
+osboxes   167439  0.0  0.0      0     0 pts/1    Z+   20:43   0:00 [awk] <defunct>
+osboxes   167440  0.0  0.0      0     0 pts/1    Z+   20:43   0:00 [sort] <defunct>
+osboxes   167441  0.0  0.0      0     0 pts/1    Z+   20:43   0:00 [awk] <defunct>
+osboxes   167443  0.2  0.0      0     0 pts/1    Z+   20:44   0:00 [ps] <defunct>
+osboxes   167444  0.0  0.0      0     0 pts/1    Z+   20:44   0:00 [awk] <defunct>
+osboxes   167445  0.0  0.0      0     0 pts/1    Z+   20:44   0:00 [sort] <defunct>
+osboxes   167447  0.0  0.0  21092  3516 pts/1    R+   20:44   0:00 ps aux

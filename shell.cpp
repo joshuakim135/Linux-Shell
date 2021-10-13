@@ -136,7 +136,7 @@ int main() {
             cout << "Bye!1 End of shell" << endl;
             break;
         }
-        
+
         // check if it's a 'cd' command
         if (inputline.length() > 2) {
             if (inputline.find("cd") == 0) {
@@ -213,7 +213,7 @@ int main() {
             bool bg = false;
             int bgp = c[i].find("&");
             if (bgp != string::npos) {
-                c[i] = c[i].substr(0, bgp - 1);
+                c[i] = c[i].substr(0, bgp);
                 bg = true;
                 cerr << "Found a background process" << endl;
             }
@@ -260,11 +260,7 @@ int main() {
 
             else {
                 if (!bg) {
-                    if (i == c.size() - 1) {
-                        waitpid(pid, 0, 0);
-                    } else {
-                        bgs.push_back(pid);
-                    }
+                     waitpid(pid, 0, 0);
                 } else {
                     bgs.push_back(pid);
                 }
